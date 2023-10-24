@@ -1,0 +1,117 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[project]
+authors = [{name = "Giulia Gualtieri"}]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+description = "A new Era of GPT has begun: Giulia's Pythontastic Toolkit is here for helping young python developers!"
+dynamic = ["version"]
+keywords = []
+license = "MIT"
+name = "giulia-pythontastic-toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.urls]
+Documentation = "https://GiuliaGualtieri.github.io/giulia-pythontastic-toolkit"
+Issues = "https://github.com/GiuliaGualtieri/giulia-pythontastic-toolkit/issues"
+Source = "https://github.com/GiuliaGualtieri/giulia-pythontastic-toolkit"
+
+[tool.hatch.version]
+path = "src/giulia-pythontastic-toolkit/__init__.py"
+
+[project.optional-dependencies]
+docs = [
+  "mkdocs~=1.4.0",
+  "mkdocs-material~=8.5.4",
+  "mkdocs-git-revision-date-localized-plugin~=1.1.0",
+  "mkdocstrings[python]~=0.19.0",
+]
+quality = [
+  "black~=22.10.0",
+  "ruff~=0.0.194",
+  "pre-commit~=2.20.0",
+]
+tests = [
+  "pytest~=7.1.2",
+]
+
+[tool.hatch.envs.quality]
+features = [
+  "quality",
+]
+
+[tool.hatch.envs.quality.scripts]
+check = [
+  "ruff src tests",
+  "black --check --diff --preview src tests",
+]
+format = [
+  "ruff --fix src tests",
+  "black --preview src tests",
+  "check",
+]
+
+[tool.ruff]
+ignore = [
+  "E501", # line too long, handled by black
+  "B008", # do not perform function calls in argument defaults
+  "C901", # too complex
+]
+select = [
+  "E", # pycodestyle errors
+  "W", # pycodestyle warnings
+  "F", # pyflakes
+  "I", # isort
+  "C", # flake8-comprehensions
+  "B", # flake8-bugbear
+]
+
+[tool.ruff.isort]
+known-first-party = ["giulia-pythontastic-toolkit"]
+
+[tool.hatch.envs.test]
+features = [
+  "tests",
+]
+
+[tool.hatch.envs.test.scripts]
+run = "pytest tests/ --durations 0 -s"
+
+[[tool.hatch.envs.test.matrix]]
+python = ["37", "38", "39", "310"]
+
+[tool.hatch.envs.docs]
+features = [
+  "docs",
+]
+
+[tool.hatch.envs.docs.scripts]
+build = [
+  "mkdocs build",
+]
+serve = [
+  "mkdocs serve",
+]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+  "/.vscode",
+  "/docs",
+  "/.devcontainer",
+  "/.pre-commit-config.yaml",
+  "/.gitignore",
+  "/tests",
+  "/Dockerfile",
+  "/.dockerignore",
+]
