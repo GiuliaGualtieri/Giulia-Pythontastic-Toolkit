@@ -12,7 +12,7 @@ Welcome to Giulia's Pythontastic Toolkit, a collection of useful Python methods,
 - **Documentation:** Clear and concise documentation for each module and function, making it easy to understand and use the toolkit.
 - **Contribution:** We welcome contributions! If you have a Python utility or decorator you'd like to share, feel free to submit a pull request.
 
-## Installation
+## 📥 Installation
 
 To use Giulia's Pythontastic Toolkit, you can install it using pip:
 
@@ -20,7 +20,7 @@ To use Giulia's Pythontastic Toolkit, you can install it using pip:
 pip install giulia-pythontastic-toolkit
 ```
 
-## Usage
+## 🚀 Usage
 Here's a simple example of how to use one of the utility functions from the toolkit:
 
 ```python
@@ -28,7 +28,7 @@ from giulias_pythontastic_toolkit.to import to_do_example
 ```
 Explore the documentation for more details on the available functions and decorators.
 
-## Contributing
+## ♻️ Contributing
 We encourage contributions from the Python community. If you have a useful Python utility, decorator, or any improvement to the toolkit, please consider contributing. Here's how you can do it:
 
 Fork the repository.
@@ -38,7 +38,7 @@ Push to your branch: git push origin feature/your-feature
 Create a pull request.
 Please review our Contribution Guidelines for more information.
 
-### Coding Features
+### 🌟 Coding Features
 
 * Package configuration with `pyproject.toml` built with `hatch`
 * Code formatting and linting with `ruff`, and `black`
@@ -49,10 +49,10 @@ Please review our Contribution Guidelines for more information.
 * Basic `pytest` set-up for unit tests
 * Auto-generated docs with `mkdocs` and `mkdocs-material`
 
-## License
+## 🔖 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contact
+## 📫 Contact
 If you have any questions, suggestions, or need assistance, feel free to reach out to Giulia:
 
 Email: giulia.gualtieri@mail.polimi.it
