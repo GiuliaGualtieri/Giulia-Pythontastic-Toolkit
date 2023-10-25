@@ -8,6 +8,7 @@ They allow you to add functionality to a function without modifying its source c
 
 import time
 
+
 # Measuring the execution time of a function using a decorator.
 def measure_time(func):
     def wrapper(*args, **kwargs):
@@ -16,6 +17,7 @@ def measure_time(func):
         end = time.time()
         print(f"Execution time: {end - start:.3f} seconds")
         return result
+
     return wrapper
 
 
@@ -26,12 +28,14 @@ def log_function(func):
         result = func(*args, **kwargs)
         print(f"Function {func.name} returned {result}")
         return result
+
     return wrapper
 
 
 # Caching the return value of a function using a decorator.
 def cache_result(func):
     cache = {}
+
     def wrapper(*args):
         if args in cache:
             print(f"Using cached result for {args}")
@@ -39,4 +43,5 @@ def cache_result(func):
         result = func(*args)
         cache[args] = result
         return result
+
     return wrapper
