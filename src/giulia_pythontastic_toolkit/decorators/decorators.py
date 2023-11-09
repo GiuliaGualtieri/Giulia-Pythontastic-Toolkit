@@ -11,6 +11,15 @@ import time
 
 # Measuring the execution time of a function using a decorator.
 def measure_time(func):
+    """
+    Decorator to measure the execution time of a function.
+
+    Args:
+        func (function): The function to be measured.
+
+    Returns:
+        function: A wrapped function that measures and prints the execution time.
+    """
     def wrapper(*args, **kwargs):
         start = time.time()
         result = func(*args, **kwargs)
@@ -23,6 +32,15 @@ def measure_time(func):
 
 # Logging the arguments and return value of a function using a decorator.
 def log_function(func):
+    """
+    Decorator to log the arguments and return value of a function.
+
+    Args:
+        func (function): The function to be logged.
+
+    Returns:
+        function: A wrapped function that logs function calls and their results.
+    """
     def wrapper(*args, **kwargs):
         print(f"Function {func.name} called with args={args} kwargs={kwargs}")
         result = func(*args, **kwargs)
@@ -34,6 +52,15 @@ def log_function(func):
 
 # Caching the return value of a function using a decorator.
 def cache_result(func):
+    """
+    Decorator to cache the return value of a function.
+
+    Args:
+        func (function): The function to be cached.
+
+    Returns:
+        function: A wrapped function that caches and returns results to avoid redundant computations.
+    """
     cache = {}
 
     def wrapper(*args):

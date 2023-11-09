@@ -24,7 +24,8 @@ pip install giulia-pythontastic-toolkit
 Here's a simple example of how to use one of the utility functions from the toolkit:
 
 ```python
-from giulias_pythontastic_toolkit.to import to_do_example
+from giulia_pythontastic_toolkit.decorators import *to_do_example*
+from giulia_pythontastic_toolkit.utility_functions import *to_do_example*
 ```
 Explore the documentation for more details on the available functions and decorators.
 
