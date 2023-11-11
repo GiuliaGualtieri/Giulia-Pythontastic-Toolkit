@@ -1,3 +1,7 @@
 hatch
 ruff
 black
+ipykernel
+numpy
+urllib3
+fitz
