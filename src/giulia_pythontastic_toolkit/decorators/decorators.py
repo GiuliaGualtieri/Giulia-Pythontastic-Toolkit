@@ -20,6 +20,7 @@ def measure_time(func):
     Returns:
         function: A wrapped function that measures and prints the execution time.
     """
+
     def wrapper(*args, **kwargs):
         start = time.time()
         result = func(*args, **kwargs)
@@ -41,6 +42,7 @@ def log_function(func):
     Returns:
         function: A wrapped function that logs function calls and their results.
     """
+
     def wrapper(*args, **kwargs):
         print(f"Function {func.name} called with args={args} kwargs={kwargs}")
         result = func(*args, **kwargs)
