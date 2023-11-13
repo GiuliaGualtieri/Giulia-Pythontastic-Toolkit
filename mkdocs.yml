@@ -1,12 +1,12 @@
 site_name: giulia-pythontastic-toolkit
 site_url: https://github.com/GiuliaGualtieri/giulia-pythontastic-toolkit
 site_author: Giulia Gualtieri
-site_description: A new Era of GPT has begun: Giulia's Pythontastic Toolkit is here for helping young python developers!
+site_description: A new Era of GPT has begun Giulia's Pythontastic Toolkit is here for helping young python developers!
 
 repo_name: GiuliaGualtieri/giulia-pythontastic-toolkit
 repo_url: https://github.com/GiuliaGualtieri/giulia-pythontastic-toolkit
 
-copyright: Copyright (c) 2022-present Giulia Gualtieri <giulia.gualtieri@mail.polimi.it>
+copyright: Copyright (c) 2022-present Giulia Gualtieri <giulia.gualtieri@mail.polimi.it
 
 theme:
   name: material
@@ -15,10 +15,12 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+      primary: teal
     - scheme: slate
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+      primary: teal
   font:
     text: Roboto
     code: Roboto Mono

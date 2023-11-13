@@ -5,3 +5,6 @@ ipykernel
 numpy
 urllib3
 fitz
+mkdocs-git-revision-date-localized-plugin
+mkdocs
+mkdocs-material
