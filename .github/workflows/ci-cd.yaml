@@ -61,7 +61,7 @@ jobs:
       - name: run-tests
         run: pytest tests/ -s --durations 0
 
-  deploy-docs:
+  build-docs:
     needs: run-tests
 
     runs-on: ubuntu-latest
@@ -80,11 +80,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[docs]"
 
-      - name: deploy-to-gh-pages
-        run: mkdocs gh-deploy --force
+      - name: build-mkdocs
+        run: mkdocs build
+
+      # - name: deploy-docs
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./site
 
   publish-package:
-    needs: deploy-docs
+    needs: build-docs
     if: github.event_name == 'release'
 
     runs-on: ubuntu-latest
@@ -106,7 +112,7 @@ jobs:
       - name: build-package
         run: hatch build
 
-      - name: publish-package
-        run: hatch publish --user __token__ --auth $PYPI_TOKEN
-        env:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+      # - name: publish-package
+      #   run: hatch publish --user __token__ --auth $PYPI_TOKEN
+      #   env:
+      #     PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
